@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企业搜索</title>
+</head>
+<body>
+    <h1>企业搜索</h1>
+    <input type="text" id="companyName" placeholder="输入企业名称">
+    <button onclick="searchCompany()">搜索</button>
+
+    <div id="result"></div>
+
+    <script>
+        const companies = {
+            "企业A": 1,
+            "企业B": 2,
+            "企业C": 3,
+            "企业D": 4
+        };
+
+        function searchCompany() {
+            const name = document.getElementById("companyName").value;
+            const id = companies[name];
+            const resultDiv = document.getElementById("result");
+            if (id) {
+                resultDiv.innerHTML = `企业编号: ${id}`;
+            } else {
+                resultDiv.innerHTML = "未找到该企业";
+            }
+        }
+    </script>
+</body>
+</html>
+

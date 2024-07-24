@@ -13,19 +13,23 @@
     <div id="result"></div>
 
     <script>
-        const companies = {
-            "企业A": 1,
-            "企业B": 2,
-            "企业C": 3,
-            "企业D": 4
-        };
+        const companies = [
+            { name: "企业A", id: 1 },
+            { name: "企业B", id: 2 },
+            { name: "企业C", id: 3 },
+            { name: "企业D", id: 4 },
+            { name: "企业E", id: 5 },
+            { name: "企业F", id: 6 },
+            { name: "企业G", id: 7 },
+            { name: "企业H", id: 8 }
+        ];
 
         function searchCompany() {
             const name = document.getElementById("companyName").value;
-            const id = companies[name];
             const resultDiv = document.getElementById("result");
-            if (id) {
-                resultDiv.innerHTML = `企业编号: ${id}`;
+            const company = companies.find(c => c.name === name);
+            if (company) {
+                resultDiv.innerHTML = `企业编号: ${company.id}`;
             } else {
                 resultDiv.innerHTML = "未找到该企业";
             }
